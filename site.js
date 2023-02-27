@@ -43,3 +43,19 @@ const vue_app = Vue.createApp({
 })
 
 vue_app.mount("#vue_app")
+
+
+const app_header = new Vue({
+  el: "#app_title",
+  data: {
+    title: "IMDB + Nicholas's Top 8 Movies",
+  },
+});
+
+const app_footer = new Vue({
+  el: "#github",
+  data: {
+    owner: "Nicholas Billitteri",
+    github: "https://github.com/Nicholas-Billitteri/NJIT-3",
+  },
+});
