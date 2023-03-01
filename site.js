@@ -20,30 +20,74 @@
 // FOR STEP 16, ADD THREE OF YOUR OWN FAVORITE MOVIES WITH METADATA TO THE END OF THE JSON FILE LIST
 */
 
+const vue_app = new Vue({
+  el: "#vue_app",
+  // This automatically imports your movies.json file and puts it into
+  //   the variable: movies
+  created() {
+    fetch("movies.json")
+      .then((response) => response.json())
+      .then((json) => {
+        this.movies = json;
+      });
+  },
+  data: {
+    // This holds your movies.json data.
+    movies: [],
 
-const vue_app = Vue.createApp({
-      // This automatically imports your movies.json file and puts it into
-      //   the variable: movies
-      created () {
-            fetch('movies.json').then(response => response.json()).then(json => {
-                  this.movies = json
-            })
-      },
-      data() {
-        return {
-            // This holds your movies.json data.
-            movies: [],
-            /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-         
-      }
+    /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
+  },
+  methods: {
+    /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+
+    //Increase like button by 1 when clicked
+    addLike: function (movie) {
+      movie.likes++;
+      console.log("movie likes: " + movie.likes);
     },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+
+    //Decrease like button by 1 when clicked
+    decreaseLike: function (movie) {
+      movie.dislikes--;
+      console.log("movie dislikes: " + movie.dislikes);
+    },
+
+    //Update poster when clicked
+    posterClick: function (movie, index) {
+      var moviePostersLength = movie.posters.length;
+
+      if (movie.posterindex < 0) {
+        movie.posterindex += moviePostersLength;
       }
-})
 
-vue_app.mount("#vue_app")
+      if (movie.posterindex < moviePostersLength - 1) {
+        movie.posterindex++;
+      } else {
+        movie.posterindex = 0;
+      }
 
+      console.log(
+        "index: " + movie.posterindex + " movie posters: " + moviePostersLength
+      );
+    },
+  },
+
+  filters: {
+    //convert poster date to USA date
+    makeTextDate: function (movie) {
+      // return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+      var date = movie.released;
+      console.log(movie.title + ": " + date);
+      return moment(String(date)).format("MMMM D, YYYY");
+    },
+
+    //covert runtime to hrs and minutes
+    timeText: function (movie) {
+      var time = movie.runtime;
+      return Math.floor(time / 60) + "h " + (time % 60) + "m";
+    },
+  },
+});
 
 const app_header = new Vue({
   el: "#app_title",

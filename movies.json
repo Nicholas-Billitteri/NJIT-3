@@ -68,5 +68,47 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+      {
+            "title": "Movie 1",
+            "iscore": 10,
+            "rating": "R",
+            "runtime": 10,
+            "released": [10, 10, 10],
+            "country": "USA",
+            "posters": ["", "", "", "", "", ""],
+            "imdb": "",
+            "website": "",
+            "likes": 10,
+            "dislikes": 10,
+            "posterindex": 0
+      },
+      {
+            "title": "Movie 2",
+            "iscore": 10,
+            "rating": "R",
+            "runtime": 10,
+            "released": [10, 10, 10],
+            "country": "USA",
+            "posters": ["", "", "", "", "", ""],
+            "imdb": "",
+            "website": "",
+            "likes": 10,
+            "dislikes": 10,
+            "posterindex": 0
+      },
+      {
+            "title": "Movie 3",
+            "iscore": 10,
+            "rating": "R",
+            "runtime": 10,
+            "released": [10, 10, 10],
+            "country": "USA",
+            "posters": ["", "", "", "", "", ""],
+            "imdb": "",
+            "website": "",
+            "likes": 10,
+            "dislikes": 10,
+            "posterindex": 0
       }
 ]
