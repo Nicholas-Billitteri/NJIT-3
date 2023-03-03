@@ -22,7 +22,7 @@
 
 const vue_app = new Vue({
   el: "#vue_app",
-  // This automatically imports your movies.json file and puts it into
+  // This automatically imports movies.json file and puts it into
   //   the variable: movies
   created() {
     fetch("movies.json")
