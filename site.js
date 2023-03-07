@@ -40,7 +40,7 @@ const vue_app = new Vue({
   methods: {
     /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
 
-    //Increase like button by 1 when clicked
+    //Increase like button by 1 when is clicked
     addLike: function (movie) {
       movie.likes++;
       console.log("movie likes: " + movie.likes);
