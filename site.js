@@ -32,7 +32,7 @@ const vue_app = new Vue({
       });
   },
   data: {
-    // This holds your movies.json data.
+    // This holds in your movies.json data.
     movies: [],
 
     /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
